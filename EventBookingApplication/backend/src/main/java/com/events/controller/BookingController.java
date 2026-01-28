@@ -16,10 +16,6 @@ public class BookingController {
 
     private final BookingService bookingService;
 
-    /**
-     * Book tickets for an event
-     * Example: POST /api/bookings
-     */
     @PostMapping
     public ResponseEntity<Booking> bookTickets(
             @Valid @RequestBody BookingRequest bookingRequest) {

@@ -15,20 +15,12 @@ public class EventController {
 
     private final EventService eventService;
 
-    /**
-     * Get all events (paginated)
-     * Example: GET /api/events?page=0&size=10
-     */
     @GetMapping
     public ResponseEntity<Page<Event>> getAllEvents(Pageable pageable) {
         Page<Event> events = eventService.getAllEvents(pageable);
         return ResponseEntity.ok(events);
     }
 
-    /**
-     * Get event by ID
-     * Example: GET /api/events/1
-     */
     @GetMapping("/{id}")
     public ResponseEntity<Event> getEventById(@PathVariable Long id) {
         Event event = eventService.getEventById(id);

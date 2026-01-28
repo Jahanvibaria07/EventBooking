@@ -40,16 +40,9 @@ public class Event {
     @Column(nullable = false)
     private int availableSeats;
 
-    /**
-     * Optimistic locking to prevent race conditions
-     * during concurrent seat booking
-     */
     @Version
     private Long version;
 
-    /**
-     * Business helper method (used in service layer)
-     */
     public void reserveSeats(int seats) {
         if (seats <= 0) {
             throw new IllegalArgumentException("Seats to reserve must be positive");
