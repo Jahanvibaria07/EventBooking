@@ -1,0 +1,14 @@
+package com.eventbooking.repository;
+
+import com.eventbooking.model.Event;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EventRepository extends JpaRepository<Event, Long> {
+    // JpaRepository already provides:
+    // - findAll(Pageable pageable)
+    // - findById(Long id)
+    // - save(Event event)
+    // - deleteById(Long id)
+}
